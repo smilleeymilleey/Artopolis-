@@ -1,5 +1,5 @@
-console.log("Harvagrd Linked");
-
+console.log("Harvard Linked"); 
+// ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
 
 let getHarvardObjectApi = function() {
     let apiUrl = "https://api.harvardartmuseums.org/object?medium=2028195&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e"
