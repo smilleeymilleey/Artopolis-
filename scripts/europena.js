@@ -1,6 +1,6 @@
 let test = function(){
 
-    let apiUrl= 'https://api.europeana.eu/record/v2/search.json?query="Mona+Lisa"&wskey=pagetorp'
+    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks/'
 
     fetch(apiUrl)
     .then(response => response.json())
