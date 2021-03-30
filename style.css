@@ -6,6 +6,9 @@
     --maroon: #51010F;
    
 }
+
+/* navbar */
+
 .btn {
     background-color: var(--maroon);
     border-color: white;
@@ -17,16 +20,10 @@
     color: var(--maroon);
 }
 
-
 .navbar {
     background-color: var(--maroon);
  
 }
-
-.nb {
-    padding: 20%;
-}
-
 .navbrand {
     color: white!important;
 }
