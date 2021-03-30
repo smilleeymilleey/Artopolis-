@@ -19,15 +19,19 @@
 
 
 .navbar {
- background-color: var(--maroon);
+    background-color: var(--maroon);
  
 }
 
-.navbar-brand {
-color: white;
+.nb {
+    padding: 20%;
 }
 
-.navbar-brand:hover {
+.navbrand {
+    color: white!important;
+}
+
+.navbrand h1:hover {
     color: white;
     cursor: pointer;
 }

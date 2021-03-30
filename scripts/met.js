@@ -23,3 +23,7 @@ async function getArtData(query){
 console.log(search.value)
  })
 
+
+
+
+
