@@ -38,8 +38,17 @@
     border-color:white;
 }
 
-
+/* Carousel */
 .container {
     padding: 25px;
 }
 
+/* API images and captions */
+
+p{
+    color: white;
+}
+
+#imgTitle {
+    font-style: italic;
+}
