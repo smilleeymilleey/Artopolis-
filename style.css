@@ -43,10 +43,18 @@
     padding: 25px;
 }
 
+.carousel-control-next, .carousel-control-prev {
+    top: 150px;
+}
+
 /* API images and captions */
 
 p{
     color: white;
+}
+
+.card:hover {
+        transform: scale(1.05);
 }
 
 .card-text {
