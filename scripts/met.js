@@ -14,7 +14,7 @@ async function getArtId(query){
     .then(function (data) {
       console.log(data);
       
-      for (let i = num * 10; i < num*10 + 10; i++) {
+      for (let i = num * 6; i < num*6 + 6; i++) {
         let objectId = data.objectIDs[i];
       
         getArtData(objectId);
