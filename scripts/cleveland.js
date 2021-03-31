@@ -2,12 +2,12 @@ let numb = 0;
 
 let getArt = function(){
 
-    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=20'
+    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=100'
 
     fetch(apiUrl)
     .then(response => response.json())
     .then(function(data){
-    console.log(data);
+
     for (i= numb * 6; i < numb * 6 + 6; i++) {
         let newDiv = document.createElement("div");
         newDiv.setAttribute('class', 'col-2');
@@ -16,6 +16,9 @@ let getArt = function(){
         img.setAttribute('class', 'img-fluid');
         let imageSource = data.data[i].images.web.url;
         img.src = imageSource;
+        img.onclick = function(){
+            window.open(imageSource, '_blank');
+        }
         newDiv.appendChild(img);
         console.log(newDiv);
 
