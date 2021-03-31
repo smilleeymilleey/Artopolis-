@@ -1,6 +1,6 @@
 console.log("Harvard Linked"); 
 // ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
-
+let set = 0;
 let getHarvardObjectApi = function() {
     let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=50&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
   
@@ -8,7 +8,7 @@ let getHarvardObjectApi = function() {
 .then(response => response.json())
 .then(function(data){
 console.log(data);
-for (let index = 0; index < 7; index++) {
+for (let index = set *6; index < set*6 + 6; index++) {
     let harvardInfoList =data.records;
     
     //start of new item in row
@@ -48,6 +48,13 @@ for (let index = 0; index < 7; index++) {
 
     document.getElementById("harvardRow").appendChild(newDiv);
     }
+})
+let addBtn = document.getElementById("harvardBtn");
+addBtn.addEventListener("click", function(){
+    set++
+
+getHarvardObjectApi();
+
 })
 }
 // let getHarvardMediumApi = function() {
