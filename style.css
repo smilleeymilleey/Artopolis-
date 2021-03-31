@@ -49,6 +49,11 @@ p{
     color: white;
 }
 
+.card-text {
+    color: black;
+}
+
+
 #imgTitle {
     font-style: italic;
 }
