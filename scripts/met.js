@@ -40,14 +40,17 @@ getArtId();
   })
   .then(function (data) {
     let image = data.primaryImageSmall;
-
     let imageEl = document.createElement("img")
+    let titleEl = document.createElement("h1")
+
+  
 
     imageEl.setAttribute("src", image);
     imageEl.setAttribute("style", "width: 100px");
 
     
     row.prepend(imageEl);
+    row.append(titleEl);
     console.log(data);
     
 
