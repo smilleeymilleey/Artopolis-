@@ -2,7 +2,7 @@ let numb = 0;
 
 let getArt = function(){
 
-    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=100'
+    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=10'
 
     fetch(apiUrl)
     .then(response => response.json())
