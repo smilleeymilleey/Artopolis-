@@ -39,25 +39,35 @@ getArtId();
     return response.json();
   })
   .then(function (data) {
+    let metDiv = document.createElement("div");
+    let divContainer = document.getElementById("metRow");
+
+    let titleElmt = document.createElement("p");
+    titleElmt.setAttribute("id","imageTitle");
+    let title = data.title;
+    titleElmt.innerHTML = title
+
+    let imageEl = document.createElement("img");
     let image = data.primaryImageSmall;
-    let imageEl = document.createElement("img")
-    let titleEl = document.createElement("h1")
-
-  
-
-    imageEl.setAttribute("src", image);
-    imageEl.setAttribute("style", "width: 100px");
-
     
-    row.prepend(imageEl);
-    row.append(titleEl);
+    imageEl.src= image;
+    
+    metDiv.setAttribute("class", "col-2");
+    imageEl.setAttribute("class", "img-fluid");
+    
+    divContainer.appendChild(metDiv);
+    metDiv.appendChild(imageEl);
+    metDiv.appendChild(titleElmt);
+    
+    
+  
     console.log(data);
     
 
   });
 }
 
-let nextBtn = document.getElementById("nextBtn");
+let nextBtn = document.getElementById("");
 nextBtn.addEventListener("click", function(){
     num++
 
