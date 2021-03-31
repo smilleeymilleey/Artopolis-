@@ -2,13 +2,14 @@ console.log("Harvard Linked");
 // ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
 
 let getHarvardObjectApi = function() {
-    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
+    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=82&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
   
     fetch(apiUrl)
 .then(response => response.json())
 .then(function(data){
 console.log(data);
 for (let index = 0; index < 7; index++) {
+    let rando = Math.floor(Math.random*7);
     //start of new item in row
     let newDiv = document.createElement("div");
     newDiv.setAttribute('class','col-2')
@@ -24,7 +25,14 @@ for (let index = 0; index < 7; index++) {
     titleEl.setAttribute('id','imgTitle');
     let titleSource = harvardInfoList[index].title;
     titleEl.innerHTML = titleSource;
-    newDiv.appendChild(titleEl)
+    newDiv.appendChild(titleEl);
+    
+    //artist
+    let artistEl = document.createElement('p');
+    let artistSource = harvardInfoList[index].people[0].name;
+    artistEl.innerHTML = artistSource;
+    newDiv.appendChild(artistEl);
+
     document.getElementById("harvardRow").appendChild(newDiv);
     }
 })
