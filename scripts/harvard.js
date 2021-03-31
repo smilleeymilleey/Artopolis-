@@ -2,7 +2,7 @@ console.log("Harvard Linked");
 // ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
 let set = 0;
 let getHarvardObjectApi = function() {
-    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=50&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
+    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=70&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
   
     fetch(apiUrl)
 .then(response => response.json())
@@ -10,6 +10,8 @@ let getHarvardObjectApi = function() {
 console.log(data);
 for (let index = set *6; index < set*6 + 6; index++) {
     let harvardInfoList =data.records;
+    let harvardInfoMed = harvardInfoList[index].medium;
+    console.log(harvardInfoMed);
     
     //start of new item in row
     let newDiv = document.createElement("div");
@@ -37,14 +39,11 @@ for (let index = set *6; index < set*6 + 6; index++) {
     artistEl.innerHTML = artistSource;
     newDiv.appendChild(artistEl);
     //medium
-    // let mediumEl = document.createElement('p');
-    // let mediumSource = harvardInfoList[index].medium;
-    // if (mediumSource == "null"){
-    //     mediumEl.innerHTML = "This art piece does not have a medium"
-    // }
-    // else
-    // mediumEl.innerHTML = mediumSource;
-    // newDiv.appendChild(mediumEl);
+     let mediumEl = document.createElement('p');
+     let mediumSource = harvardInfoList[index].medium;
+     mediumEl.innerHTML = mediumSource;
+     newDiv.appendChild(mediumEl);
+   
 
     document.getElementById("harvardRow").appendChild(newDiv);
     }
