@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 const searchBar = document.getElementById("searchBar");
 
 
 
 
+=======
+>>>>>>> 7ee91047842a5f969646d85fdd91c8e3c366978f
 // let numb = 0;
 
 // let getArt = function(){
@@ -60,6 +63,10 @@ const searchBar = document.getElementById("searchBar");
 //         }
 //     })
 // }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7ee91047842a5f969646d85fdd91c8e3c366978f
 // let nextBtn2 = document.getElementById("nextBtn2");
 // nextBtn2.addEventListener("click", function(){
 //     numb++
