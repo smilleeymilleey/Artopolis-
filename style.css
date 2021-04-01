@@ -8,6 +8,20 @@
 }
 
 /* navbar */
+.nav1 {
+    background-color: var(--maroon)!important;
+    padding: 3%;
+  
+}
+
+.navName {
+    color: white !important;
+    font-size: 40px;
+}
+
+
+
+
 
 .btn {
     background-color: var(--maroon);
@@ -87,4 +101,13 @@ a.link {
     
     padding-top:3%;
    
+}
+
+.more {
+    background-color: white;
+    color: var(--maroon);
+    border: var(--maroon);
+    border-radius: 10%;
+    display: flex;
+    justify-content: right;
 }
