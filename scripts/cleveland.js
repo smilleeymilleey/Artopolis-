@@ -2,7 +2,7 @@ let numb = 0;
 
 let getArt = function(){
 
-    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=10'
+    let apiUrl= 'https://openaccess-api.clevelandart.org/api/artworks?has_image=1&limit=100'
 
     fetch(apiUrl)
     .then(response => response.json())
@@ -15,6 +15,7 @@ let getArt = function(){
         newDiv.setAttribute('class', 'col-2');
         let source = data.data[random];
 
+        if(source != undefined && source.images != undefined){
         let img = document.createElement("img");
         img.setAttribute('class', 'img-fluid');
         let imageSource = source.images.web.url;
@@ -23,32 +24,33 @@ let getArt = function(){
             window.open(imageSource, '_blank');
         }
         newDiv.appendChild(img);
-        console.log(newDiv);
+        // console.log(newDiv);
+        }
 
         if(source != undefined){
-            let titleEl = document.createElement("p");
+        let titleEl = document.createElement("p");
         titleEl.setAttribute('id', 'imgTitle');
         let titleSource = source.title;
         titleEl.innerHTML = titleSource;
         newDiv.appendChild(titleEl);
-        console.log(newDiv);
+        // console.log(newDiv);
         }
 
         
-        // if(source != undefined && source.creators[0] != undefined){
+        if(source != undefined && source.creators[0] != undefined){
         let artistEl = document.createElement("p");
         let artistSource = source.creators[0].description;
         artistEl.innerHTML = artistSource;
         newDiv.appendChild(artistEl);
-        console.log(newDiv);
-        // }
+        // console.log(newDiv);
+        }
 
         if(source != undefined){
         let mediumEl = document.createElement("p");
         let mediumSource = source.technique;
         mediumEl.innerHTML = mediumSource;
         newDiv.appendChild(mediumEl);
-        console.log(newDiv);
+        // console.log(newDiv);
         }
 
         document.getElementById("clevelandRow").appendChild(newDiv);
