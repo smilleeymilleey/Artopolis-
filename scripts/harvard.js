@@ -2,13 +2,13 @@ console.log("Harvard Linked");
 // ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
 let set = 0;
 let getHarvardObjectApi = function() {
-    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=70&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
+    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=80&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
   
     fetch(apiUrl)
 .then(response => response.json())
 .then(function(data){
 console.log(data);
-for (let index = set *6; index < set*6 + 6; index++) {
+for (let index = 0; index < 6; index++) {
     let harvardInfoList =data.records;
     let harvardInfoMed = harvardInfoList[index].medium;
     console.log(harvardInfoMed);
@@ -30,18 +30,20 @@ for (let index = set *6; index < set*6 + 6; index++) {
     let titleEl = document.createElement('p');
     titleEl.setAttribute('id','imgTitle');
     let titleSource = harvardInfoList[index].title;
-    titleEl.innerHTML = titleSource;
+    titleEl.innerHTML = "Title: "+titleSource;
     harvardDiv.appendChild(titleEl);
     
     //artist
+    // if(harvardInfoList.index.people[0].name)
     let artistEl = document.createElement('p');
-    let artistSource = harvardInfoList[index].people[0].name;
+    artistEl.setAttribute('id','artistName')
+    let artistSource = harvardInfoList[index].people[1].name;
     artistEl.innerHTML = artistSource;
     harvardDiv.appendChild(artistEl);
     //medium
      let mediumEl = document.createElement('p');
      let mediumSource = harvardInfoList[index].medium;
-     mediumEl.innerHTML = mediumSource;
+     mediumEl.innerHTML ="Medium: "+ mediumSource;
      harvardDiv.appendChild(mediumEl);
    
 
@@ -50,7 +52,8 @@ for (let index = set *6; index < set*6 + 6; index++) {
 })
 let addBtn = document.getElementById("harvardBtn");
 addBtn.addEventListener("click", function(){
-    set++
+    clearInterval(set);
+   //set++ 
 
 getHarvardObjectApi();
 
