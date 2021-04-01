@@ -83,11 +83,11 @@ getArtId();
   });
 }
 
-let nextBtn = document.getElementById("");
+let nextBtn = document.getElementById("btn3");
 nextBtn.addEventListener("click", function(){
-    num++
+  num++
 
-  getArtId()
+  getArtId();
 
 
 })
