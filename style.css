@@ -65,3 +65,16 @@ p{
 #imgTitle {
     font-style: italic;
 }
+
+/* museum page */
+
+.headerName {
+    border-bottom: 8px solid var(--maroon);
+    margin-left: 5%;
+    margin-right: 5%;
+    
+    font-weight: bold;
+    
+    padding-top:3%;
+   
+}
