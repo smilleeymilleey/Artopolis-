@@ -14,15 +14,15 @@ for (let index = set; index < set*6 + 6; index++) {
     console.log(harvardInfoMed);
     
     //start of new item in row
-    let newDiv = document.createElement("div");
+    let harvardDiv = document.createElement("div");
     let img = document.createElement("img");
     let imgSrc = harvardInfoList[index].images[0].baseimageurl;
-    newDiv.setAttribute('class','col-2')
+    harvardDiv.setAttribute('class','col-2')
     img.setAttribute('class', 'img-fluid');
     // let harvardImgEls = document.querySelectorAll('#harvardContainer img');
     //try to get img to grab from api
     img.src = imgSrc;
-    newDiv.appendChild(img);
+    harvardDiv.appendChild(img);
     img.onclick = function(){
         window.open(imgSrc, '_blank');
     }
@@ -31,22 +31,22 @@ for (let index = set; index < set*6 + 6; index++) {
     titleEl.setAttribute('id','imgTitle');
     let titleSource = harvardInfoList[index].title;
     titleEl.innerHTML = titleSource;
-    newDiv.appendChild(titleEl);
+    harvardDiv.appendChild(titleEl);
     
     //artist
     let artistEl = document.createElement('p');
     artistEl.setAttribute('id','artistName')
     let artistSource = harvardInfoList[index].people[0].name;
     artistEl.innerHTML = artistSource;
-    newDiv.appendChild(artistEl);
+    harvardDiv.appendChild(artistEl);
     //medium
      let mediumEl = document.createElement('p');
      let mediumSource = harvardInfoList[index].medium;
      mediumEl.innerHTML = mediumSource;
-     newDiv.appendChild(mediumEl);
+     harvardDiv.appendChild(mediumEl);
    
 
-    document.getElementById("harvardRow").appendChild(newDiv);
+    document.getElementById("harvardRow").appendChild(harvardDiv);
     }
 })
 let addBtn = document.getElementById("harvardBtn");
