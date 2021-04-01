@@ -36,6 +36,7 @@ async function getArtId(query){
   })
   .then(function (data) {
     let metDiv = document.createElement("div");
+    metDiv = setAttribute('class', 'card');
     let divContainer = document.getElementById("metRow");
     
     let titleElmt = document.createElement("p");
