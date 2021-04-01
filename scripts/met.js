@@ -38,6 +38,10 @@ async function getArtId(query){
     let metDiv = document.createElement("div");
     let divContainer = document.getElementById("metRow");
     
+    
+    metDiv.setAttribute("class", "card-body");
+
+
     let titleElmt = document.createElement("p");
     titleElmt.setAttribute("id","imageTitle");
     let title = data.title;
@@ -71,25 +75,25 @@ async function getArtId(query){
     divContainer.appendChild(metDiv);
     
     
-    function searchBar() {
-      let searchResults = document.getElementById("mySearch").value;
+    // function searchBar() {
+    //   let searchResults = document.getElementById("mySearch").value;
       
-      if (title == searchResults){
-        let searchDiv = document.createElement("div");
-        let searchTitle = document.createElement("h6");
+    //   if (title == searchResults){
+    //     let searchDiv = document.createElement("div");
+    //     let searchTitle = document.createElement("h6");
           
         
-        let searchHTML = document.getElementById("searchId");
-        searchDiv.appendChild(searchTitle);
-        searchTitle.innerHTML = title;
-          searchHTML.appendChild(searchDiv);
+    //     let searchHTML = document.getElementById("searchId");
+    //     searchDiv.appendChild(searchTitle);
+    //     searchTitle.innerHTML = title;
+    //       searchHTML.appendChild(searchDiv);
           
 
-        }else{
+    //     }else{
           
-      }
+    //   }
       
-    }
+    // }
     
   
     console.log(data);
