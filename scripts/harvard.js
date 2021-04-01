@@ -2,16 +2,17 @@ console.log("Harvard Linked");
 // ^^^Changed Harvagrd to Harvard. It was bothering me lol. EH
 let set = 0;
 let getHarvardObjectApi = function() {
-    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=70&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
+    let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=80&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
   
     fetch(apiUrl)
 .then(response => response.json())
 .then(function(data){
 console.log(data);
-for (let index = set *6; index < set*6 + 6; index++) {
-    let harvardInfoList =data.records;
-    let harvardInfoMed = harvardInfoList[index].medium;
-    console.log(harvardInfoMed);
+let harvardInfoList =data.records;
+//let harvardInfoMed = harvardInfoList[index].medium;
+console.log(harvardInfoList);
+
+for (let index = 0; index < 6; index++) {
     
     //start of new item in row
     let harvardDiv = document.createElement("div");
@@ -27,22 +28,27 @@ for (let index = set *6; index < set*6 + 6; index++) {
         window.open(imgSrc, '_blank');
     }
     // grab title, artists, and medium
-    let titleEl = document.createElement('p');
-    titleEl.setAttribute('id','imgTitle');
-    let titleSource = harvardInfoList[index].title;
-    titleEl.innerHTML = titleSource;
-    harvardDiv.appendChild(titleEl);
+    let hTitleEl = document.createElement('p');
+    hTitleEl.setAttribute('id','imgTitle');
+    let hTitleSource = harvardInfoList[index].title;
+    hTitleEl.innerHTML = "Title: "+hTitleSource;
+    harvardDiv.appendChild(hTitleEl);
     
     //artist
-    let artistEl = document.createElement('p');
-    let artistSource = harvardInfoList[index].people[0].name;
-    artistEl.innerHTML = artistSource;
-    harvardDiv.appendChild(artistEl);
+    if(harvardInfoList[index].peoplecount> 0)
+    {
+
+        let hArtistEl = document.createElement('p');
+        hArtistEl.setAttribute('id','artistName')
+        let hArtistSource = harvardInfoList[index].people[0].name;
+        hArtistEl.innerHTML = "Artist: "+hArtistSource;
+        harvardDiv.appendChild(hArtistEl);
+    }
     //medium
-     let mediumEl = document.createElement('p');
-     let mediumSource = harvardInfoList[index].medium;
-     mediumEl.innerHTML = mediumSource;
-     harvardDiv.appendChild(mediumEl);
+     let hMediumEl = document.createElement('p');
+     let hMediumSource = harvardInfoList[index].medium;
+     hMediumEl.innerHTML ="Medium: "+ hMediumSource;
+     harvardDiv.appendChild(hMediumEl);
    
 
     document.getElementById("harvardRow").appendChild(harvardDiv);
@@ -50,21 +56,22 @@ for (let index = set *6; index < set*6 + 6; index++) {
 })
 let addBtn = document.getElementById("harvardBtn");
 addBtn.addEventListener("click", function(){
-    set++
+    clearInterval(set);
+   //set++ 
 
 getHarvardObjectApi();
 
 })
 }
-// let getHarvardMediumApi = function() {
-//     let apiUrl = "https://api.harvardartmuseums.org/medium?apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e"
+let getHarvardMediumApi = function() {
+    let apiUrl = "https://api.harvardartmuseums.org/person?apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e"
   
-//     fetch(apiUrl)
-// .then(response => response.json())
-// .then(function(data){
-// console.log(data);
-// })
-// }
+    fetch(apiUrl)
+.then(response => response.json())
+.then(function(data){
+console.log(data);
+})
+}
 
  getHarvardObjectApi();
-
+ getHarvardMediumApi();
