@@ -55,6 +55,7 @@ let getArt = function(){
         }
     })
 }
+
 let nextBtn2 = document.getElementById("nextBtn2");
 nextBtn2.addEventListener("click", function(){
     numb++
