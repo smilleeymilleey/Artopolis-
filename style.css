@@ -7,9 +7,16 @@
    
 }
 
-footer{
-    color: white;
+ footer{
+color: white;
   background-color:   var(--maroon); 
+} 
+
+.footerCont {
+
+margin-top: 5%;
+width: 100%;
+
 }
 
 /* navbar */

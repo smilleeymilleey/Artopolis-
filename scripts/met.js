@@ -35,6 +35,7 @@ async function getArtId(query){
     return response.json();
   })
   .then(function (data) {
+    console.log(data)
     let metDiv = document.createElement("div");
     let divContainer = document.getElementById("metRow");
 
@@ -54,12 +55,16 @@ async function getArtId(query){
     let artistName = data.artistDisplayName;
     artistElement.innerHTML = "Artist: " + artistName;
 
-    
+    let imgURL = data.primaryImage 
 
     let imageEl = document.createElement("img");
     let image = data.primaryImageSmall;
     
     imageEl.src= image;
+
+    imageEl.onclick = function() {
+      window.open(imgURL, "_blank");
+    }
     
     metDiv.setAttribute("class", "col-2");
     imageEl.setAttribute("class", "img-fluid");
@@ -69,36 +74,6 @@ async function getArtId(query){
     metDiv.appendChild(mediumElement);
     metDiv.appendChild(artistElement);
     divContainer.appendChild(metDiv);
-    
-    
-    // function searchBar() {
-    //   let searchResults = document.getElementById("mySearch").value;
-      
-    //   if (title == searchResults){
-    //     let searchDiv = document.createElement("div");
-    //     let searchTitle = document.createElement("h6");
-          
-        
-    //     let searchHTML = document.getElementById("searchId");
-    //     searchDiv.appendChild(searchTitle);
-    //     searchTitle.innerHTML = title;
-    //       searchHTML.appendChild(searchDiv);
-          
-
-    //     }else{
-          
-    //   }
-      
-    // }
-    
-  
-    // console.log(data);
-    
-    // button.addEventListener("click", function(){
-    //   getArtData(search.value)
-    //   searchBar()
-    //   console.log(search.value)
-    // })
     
   });
 }
