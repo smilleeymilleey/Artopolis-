@@ -20,9 +20,6 @@
 }
 
 
-
-
-
 .btn {
     background-color: var(--maroon);
     border-color: white;
@@ -33,6 +30,7 @@
     background-color: white;
     color: var(--maroon);
 }
+
 
 .navbar {
     background-color: var(--maroon);
@@ -47,10 +45,15 @@
     cursor: pointer;
 }
 
+#link1, #link2, #link3 {
+    color: white;
+}
+
 .searchBorder {
     opacity: 0.5;
     border-color:white;
 }
+
 
 /* Carousel */
 .container {
@@ -61,18 +64,44 @@
     top: 150px;
 }
 
+.small-control-next, .small-control-prev {
+    top: -50px;
+}
+
+.fa {
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
 /* API images and captions */
 
 p{
     color: white;
 }
 
+.card-deck {
+    padding: 75px;
+}
+
 .card:hover {
         transform: scale(1.05);
 }
 
+.card-title {
+    color: var(--maroon);
+}
+
 .card-text {
     color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 
@@ -86,9 +115,7 @@ p{
     border-bottom: 8px solid var(--maroon);
     margin-left: 5%;
     margin-right: 5%;
-    
     font-weight: bold;
-    
     padding-top:3%;
    
 }

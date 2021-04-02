@@ -37,10 +37,6 @@ async function getArtId(query){
   .then(function (data) {
     let metDiv = document.createElement("div");
     let divContainer = document.getElementById("metRow");
-    
-    
-    metDiv.setAttribute("class", "card-body");
-
 
     let titleElmt = document.createElement("p");
     titleElmt.setAttribute("id","imageTitle");
@@ -96,13 +92,13 @@ async function getArtId(query){
     // }
     
   
-    console.log(data);
+    // console.log(data);
     
-    button.addEventListener("click", function(){
-      getArtData(search.value)
-      searchBar()
-      console.log(search.value)
-    })
+    // button.addEventListener("click", function(){
+    //   getArtData(search.value)
+    //   searchBar()
+    //   console.log(search.value)
+    // })
     
   });
 }
