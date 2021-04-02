@@ -3,20 +3,29 @@ console.log("Harvard Linked");
 let set = 0;
 let getHarvardObjectApi = function() {
     let apiUrl = "https://api.harvardartmuseums.org/object?hasimage=1&size=80&apikey=14b95f76-a12b-49ea-8252-36b1ac92a05e";
-  
+    
     fetch(apiUrl)
-.then(response => response.json())
-.then(function(data){
-//console.log(data);
-let harvardInfoList =data.records;
+    .then(response => response.json())
+    .then(function(data){
+        //console.log(data);
+        let harvardInfoList =data.records;
+        let updatedList = [];
 //let harvardInfoMed = harvardInfoList[index].medium;
 //console.log(harvardInfoList);
-
+for (let g = 0; g < harvardInfoList.length; g++) {
+      if(harvardInfoList[g].images.length>0){
+          updatedList = updatedList.concat(harvardInfoList[g]);
+      }
+}
 for (let index = set*6; index < set*6+6; index++) {
     let random = Math.floor(Math.random() * 80);
-    let source = harvardInfoList[random];
+    let source = updatedList[random];
     console.log(source);
     //start of new item in row
+    if(source != undefined){
+    while (source == undefined) {
+        source = updatedList[random+1];
+    }    
     let harvardDiv = document.createElement("div");
     if(source != undefined && source.images[0] != undefined){
         let img = document.createElement("img");
@@ -41,16 +50,16 @@ for (let index = set*6; index < set*6+6; index++) {
     harvardDiv.appendChild(hTitleEl);
     }
     //artist
-    if(source.peoplecount>0)
+     if(source.peoplecount>0)
     {
-        if(source != undefined && source.people[0] != undefined ){
+        if(source != undefined ){
         let hArtistEl = document.createElement('p');
         hArtistEl.setAttribute('id','artistName')
         let hArtistSource = source.people[0].name;
         hArtistEl.innerHTML = "Artist: "+hArtistSource;
         harvardDiv.appendChild(hArtistEl);
         }
-    }
+     }
     //medium
      let hMediumEl = document.createElement('p');
      let hMediumSource = source.medium;
@@ -60,7 +69,8 @@ for (let index = set*6; index < set*6+6; index++) {
 
     document.getElementById("harvardRow").appendChild(harvardDiv);
     }
-})
+    }})
+
 let addBtn = document.getElementById("harvardBtn");
 addBtn.addEventListener("click", function(){
     
