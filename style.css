@@ -64,6 +64,16 @@
     top: 150px;
 }
 
+.small-control-next, .small-control-prev {
+    top: -50px;
+}
+
+.fa {
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
 /* API images and captions */
 
 p{
