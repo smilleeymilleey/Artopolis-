@@ -34,7 +34,7 @@ This is a project for viewing art across popular museums
   -->
     <br />
     <br />
-    <a href="https://github.com/smilleeymilleey/Artopolis-/issues">View Deployed Link</a>
+    <a href="https://smilleeymilleey.github.io/Artopolis-/">View Deployed Link</a>
     ·
     <a href="https://github.com/smilleeymilleey/Artopolis-/issues">Report Bug</a>
     ·
